@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Code/Widgets.Demo/Widgets.Demo.Desktop/appsettings.client.json

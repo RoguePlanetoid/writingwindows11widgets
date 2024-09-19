@@ -1,0 +1,59 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.4",
+  "body": [
+    {
+      "type": "Container",
+      "style": "emphasis",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "🤖 ChatGPT Highlights",
+          "weight": "Bolder",
+          "size": "Medium",
+          "color": "Accent",
+          "spacing": "None"
+        },
+        {
+          "type": "TextBlock",
+          "text": "💬 Engage in natural conversations",
+          "wrap": true,
+          "spacing": "Small"
+        },
+        {
+          "type": "TextBlock",
+          "text": "📝 Generate creative content and ideas",
+          "wrap": true,
+          "spacing": "Small"
+        },
+        {
+          "type": "TextBlock",
+          "text": "🔍 Find quick answers and solutions",
+          "wrap": true,
+          "spacing": "Small"
+        },
+        {
+          "type": "TextBlock",
+          "text": "🔧 Customize interactions to fit your needs",
+          "wrap": true,
+          "spacing": "Small"
+        }
+      ]
+    },
+    {
+      "type": "ActionSet",
+      "actions": [
+        {
+          "type": "Action.OpenUrl",
+          "title": "Learn More About ChatGPT 🤔",
+          "url": "https://www.openai.com/chatgpt"
+        }
+      ]
+    }
+  ],
+  "backgroundImage": {
+    "url": "https://adaptivecards.io/content/TechBackground.jpg",
+    "fillMode": "Cover"
+  }
+}
