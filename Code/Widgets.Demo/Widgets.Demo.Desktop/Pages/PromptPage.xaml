@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Widgets.Demo.Desktop.Pages.PromptPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Widgets.Demo.Desktop.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Name="Display">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ComboBox IsEditable="True" Text="{Binding Model.Endpoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        Grid.Row="0" Header="Endpoint" HorizontalAlignment="Stretch" FontSize="{StaticResource HubSectionHeaderThemeFontSize}">
+            <ComboBoxItem Content="https://catfact.ninja/fact"/>
+            <ComboBoxItem Content="https://api.chucknorris.io/jokes/random"/>
+            <ComboBoxItem Content="https://official-joke-api.appspot.com/random_joke"/>
+        </ComboBox>
+        <TextBox Text="{Binding Model.Prompt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        Grid.Row="1" Header="Prompt" AcceptsReturn="True" TextWrapping="Wrap" 
+        FontSize="{StaticResource HubSectionHeaderThemeFontSize}"/>
+        <TextBox Text="{Binding Model.Template, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+        Grid.Row="2" Header="Template" AcceptsReturn="True" TextWrapping="Wrap" 
+        FontSize="{StaticResource HubSectionHeaderThemeFontSize}"/>
+        <TextBox Text="{Binding Model.Data}" AcceptsReturn="True"
+        Grid.Row="3" TextWrapping="Wrap" Header="Data"
+        IsReadOnly="True" FontSize="{StaticResource HubSectionHeaderThemeFontSize}"/>
+        <CommandBar Grid.Row="4" DefaultLabelPosition="Right">
+            <AppBarButton Icon="Message" Label="Generate" CommandParameter="{Binding Model, Mode=TwoWay}" 
+                Command="{Binding GenerateAction.Command}" />
+            <AppBarButton Icon="PostUpdate" Label="Data" CommandParameter="{Binding Model, Mode=TwoWay}" 
+                Command="{Binding DataAction.Command}"/>
+            <AppBarButton Icon="Save" Label="Save" CommandParameter="{Binding Model, Mode=TwoWay}" 
+                Command="{Binding SaveAction.Command}"/>
+            <AppBarButton Icon="Refresh" Label="Reset" Command="{Binding ResetAction.Command}"/>
+        </CommandBar>
+    </Grid>
+</Page>
